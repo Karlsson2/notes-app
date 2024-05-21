@@ -11,7 +11,6 @@ type Note = {
 
 export default async function Notes() {
   const notes: Note[] = await GetNotes();
-  console.log(notes);
   return (
     <main>
       <Searchbar />

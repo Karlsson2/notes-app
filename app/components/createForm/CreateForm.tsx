@@ -37,7 +37,7 @@ export default function CreateForm({ setShowForm }: CreateFormProps) {
       <div className={styles.blurWrapper}></div>
       <div className={styles.createFormWrapper}>
         <button className={styles.closeButton} onClick={handleClose}>
-          <Image src="/icons/close.svg" width={18} height={18} alt="edit" />
+          <Image src="/icons/close.svg" width={32} height={32} alt="edit" />
         </button>
         <div className={styles.formTitle}>New Sticky</div>
         <form

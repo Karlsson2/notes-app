@@ -1,26 +1,24 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { GetNotes } from "../config/data";
-import Searchbar from "../components/Searchbar/Searchbar";
+import Searchbar from "../components/searchbar/Searchbar";
 import NoteComponent from "../components/Note/Note";
 import { Note } from "@/app/components/Types/NoteTypes";
+import NoteContext from "../context/NoteContext";
 
 export default function Notes() {
+  const { notes, setNotes } = useContext(NoteContext);
+
   const [filteredNotes, setFilteredNotes] = useState<Note[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const fetchAndSetNotes = async () => {
-    const notes = await GetNotes();
-    setFilteredNotes(notes);
-  };
-  useEffect(() => {
-    fetchAndSetNotes();
-  }, []);
+  console.log(notes);
+  console.log("test");
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
-    const filtered = filteredNotes.filter(
-      (note) =>
+    const filtered = notes.filter(
+      (note: any) =>
         note.title.toLowerCase().includes(query.toLowerCase()) ||
         note.content.toLowerCase().includes(query.toLowerCase())
     );
@@ -31,7 +29,7 @@ export default function Notes() {
     <main>
       <Searchbar onSearchChange={handleSearchChange} />{" "}
       {/* Pass the function as a prop */}
-      {filteredNotes.map((note) => (
+      {notes.map((note: any) => (
         <NoteComponent key={note._id} note={note} />
       ))}
     </main>

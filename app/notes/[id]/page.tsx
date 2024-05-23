@@ -1,17 +1,13 @@
 import { GetNotes } from "@/app/config/data";
 import { updateNote } from "@/app/config/action";
+import { Note } from "@/app/components/Types/NoteTypes";
 
 type Params = {
   params: { id: String };
 };
 
-export default async function Note(params: Params) {
-  type Note = {
-    _id: string;
-    title: string;
-    content: string;
-    tag: string;
-  };
+export default async function NotePage(params: Params) {
+
   const notes = await GetNotes();
   const slug = params.params.id;
   const note = notes.find((note: Note) => note._id === slug);

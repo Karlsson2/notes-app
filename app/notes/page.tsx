@@ -1,13 +1,7 @@
 import { GetNotes } from "../config/data";
-import Searchbar from "../components/searchbar/Searchbar";
-import Note from "../components/note/Note";
-
-type Note = {
-  _id: string;
-  title: string;
-  content: string;
-  tag: string;
-};
+import Searchbar from "../components/Searchbar/Searchbar";
+import NoteProps from "../components/Note/Note";
+import { Note } from "@/app/components/Types/NoteTypes";
 
 export default async function Notes() {
   const notes: Note[] = await GetNotes();
@@ -15,7 +9,7 @@ export default async function Notes() {
     <main>
       <Searchbar />
       {notes.map((note) => (
-        <Note key={note._id} note={note} />
+        <NoteProps key={note._id} note={note} />
       ))}
     </main>
   );

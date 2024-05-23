@@ -1,6 +1,6 @@
 import { GetNotes } from "../config/data";
 import Searchbar from "../components/Searchbar/Searchbar";
-import NoteProps from "../components/Note/Note";
+import NoteComponent from "../components/Note/Note";
 import { Note } from "@/app/components/Types/NoteTypes";
 
 export default async function Notes() {
@@ -9,7 +9,7 @@ export default async function Notes() {
     <main>
       <Searchbar />
       {notes.map((note) => (
-        <NoteProps key={note._id} note={note} />
+        <NoteComponent key={note._id} note={note} />
       ))}
     </main>
   );

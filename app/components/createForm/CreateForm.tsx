@@ -13,8 +13,7 @@ export default function CreateForm({ setShowForm }: CreateFormProps) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const { title, content, tag } = Object.fromEntries(formData);
-    addNote(formData);
+    await addNote(formData);
     handleClose();
   };
 

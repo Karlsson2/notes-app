@@ -2,10 +2,11 @@ import { deleteNote } from "@/app/config/action";
 import Link from "next/link";
 import Image from "next/image";
 import {NoteProps} from "@/app/components/Types/NoteTypes";
+import styles from "./note.module.css"
 
 export default function NoteComponent(props: NoteProps) {
   return (
-    <div>
+    <div className={styles.noteWrapper}>
       <h2>{props.note.title}</h2>
       <p>{props.note.title}</p>
       <p>{props.note.tag}</p>

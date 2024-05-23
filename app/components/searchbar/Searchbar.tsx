@@ -1,5 +1,5 @@
 'use client'
-import CreateForm from "../createForm/CreateForm";
+import CreateForm from "../CreateForm/CreateForm";
 import { useState } from "react";
 
 export default function Searchbar() {

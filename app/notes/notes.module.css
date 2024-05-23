@@ -1,0 +1,25 @@
+.NotesContainer {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 column for very small screens */
+  padding: 42px;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .NotesContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (min-width: 900px) {
+  .NotesContainer {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .NotesContainer {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+  }
+}

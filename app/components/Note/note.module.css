@@ -1,3 +1,74 @@
-.noteWrapper{
-    display: flex;
+.noteWrapper {
+  display: flex;
+  flex-direction: column;
+  background: #3e3e40;
+  border-radius: 10px;
+  height: 100%;
+  transition: 0.5s;
+  transform: scale(0.9);
+}
+
+.noteWrapper:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #8a99cf;
+  filter: blur(3px);
+}
+
+.noteWrapper:hover {
+  box-shadow: 0 0 15px #8a99cf;
+}
+
+.titleWrapper {
+  background: #2f2f31;
+  border-radius: 10px 10px 0px 0px;
+  padding: 8px 16px;
+}
+.contentWrapper {
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+.bottomWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.operationsWrapper {
+  display: flex;
+  height: 100%;
+  gap: 8px;
+  background: #2f2f31;
+  padding: 8px;
+  border-radius: 10px;
+}
+.operationsWrapper a,
+.operationsWrapper form {
+  height: 18px;
+}
+.submitButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.bar {
+  height: 100%;
+  width: 1px;
+  background: #fff;
+}
+.tag {
+  background: #8a99cf;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+.shinyEffect {
+  transition: 0.5s;
+  transform: scale(0.9);
+}
+
+.shinyEffect:hover {
+  transform: scale(1.2);
 }

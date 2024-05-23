@@ -20,6 +20,7 @@ export default function CreateForm({ setShowForm }: CreateFormProps) {
 
   return (
     <div>
+      <button onClick={handleClose}>X</button>
       <form onSubmit={handleSubmit} id="createForm">
         <div>
           <label htmlFor="title">Title</label>

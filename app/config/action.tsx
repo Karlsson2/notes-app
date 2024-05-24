@@ -3,9 +3,11 @@ import Note from "@/model/note";
 import db from "./database";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 /* import { Note } from "../components/Types/NoteTypes"; */
 /* import { redirect } from "next/navigation" */
 const addNote = async (FormData: FormData) => {
+  const router = useRouter();
   const { title, content, tag } = Object.fromEntries(FormData);
   try {
     db();
@@ -14,8 +16,7 @@ const addNote = async (FormData: FormData) => {
   } catch (error) {
     throw new Error("Failed to create note" + error);
   }
-  revalidatePath("/");
-  redirect("/notes");
+  router.refresh();
 };
 
 const updateNote = async (FormData: FormData) => {
@@ -40,6 +41,7 @@ const deleteNote = async (FormData: FormData) => {
   try {
     db();
     await Note.findByIdAndDelete(id);
+    console.log("reeeeee");
   } catch (error) {
     throw new Error("Failed to Delete" + error);
   }

@@ -3,11 +3,10 @@ import Note from "@/model/note";
 import db from "./database";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { useRouter } from "next/navigation";
 /* import { Note } from "../components/Types/NoteTypes"; */
 /* import { redirect } from "next/navigation" */
+
 const addNote = async (FormData: FormData) => {
-  const router = useRouter();
   const { title, content, tag } = Object.fromEntries(FormData);
   try {
     db();
@@ -16,12 +15,9 @@ const addNote = async (FormData: FormData) => {
   } catch (error) {
     throw new Error("Failed to create note" + error);
   }
-<<<<<<< HEAD
+
   revalidatePath("/");
   redirect("/notes");
-=======
-  router.refresh();
->>>>>>> parent of 59b4975 ( disable vercel cache)
 };
 
 const updateNote = async (FormData: FormData) => {

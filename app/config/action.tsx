@@ -21,6 +21,10 @@ const addNote = async (FormData: FormData) => {
 
 const updateNote = async (FormData: FormData) => {
   const { id, title, content, tag } = Object.fromEntries(FormData);
+  id?.toString().trim().toString();
+  title?.toString().trim().toString();
+  content?.toString().trim().toString();
+  tag?.toString().trim().toString();  
   try {
     db();
     const updateFields: any= { title, content, tag };

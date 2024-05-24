@@ -10,15 +10,15 @@ export default function DummyNote(props: DummyNoteType) {
         <h2>{props.title}</h2>
       </div>
       <div className={styles.contentWrapper}>
-       { Array.isArray(props.content) ? 
-        <ul>
-          {props.content.map((item: string, index: number) => (
-            <p key={index}>{item}</p>
-          ))}
-        </ul>
-       :
-        <p>{props.content}</p>
-      }
+        {Array.isArray(props.content) ? (
+          <ul>
+            {props.content.map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{props.content}</p>
+        )}
         <div className={styles.bottomWrapper}>
           <p className={styles.tag}>{props.tag.toUpperCase()}</p>
           <div className={styles.operationsWrapper}>

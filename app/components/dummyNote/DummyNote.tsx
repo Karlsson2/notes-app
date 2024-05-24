@@ -1,15 +1,24 @@
 // DummyNote.jsx
+import { DummyNoteType } from "../Types/DummyNote";
 import styles from "./dummynote.module.css";
 import Image from "next/image";
 
-export default function DummyNote(props: any) {
+export default function DummyNote(props: DummyNoteType) {
   return (
     <div className={`${styles.noteWrapper} ${styles[props.class]}`}>
       <div className={styles.titleWrapper}>
         <h2>{props.title}</h2>
       </div>
       <div className={styles.contentWrapper}>
+       { Array.isArray(props.content) ? 
+        <ul>
+          {props.content.map((item: string, index: number) => (
+            <p key={index}>{item}</p>
+          ))}
+        </ul>
+       :
         <p>{props.content}</p>
+      }
         <div className={styles.bottomWrapper}>
           <p className={styles.tag}>{props.tag.toUpperCase()}</p>
           <div className={styles.operationsWrapper}>

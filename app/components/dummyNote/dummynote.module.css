@@ -1,0 +1,129 @@
+.noteWrapper {
+    display: flex;
+    flex-direction: column;
+    background: #3e3e40;
+    border-radius: 10px;
+    height: 210px;
+    width: 293px;
+    transition: 0.5s;
+    transform: scale(0.9);
+  }
+  
+  .noteWrapper:hover:before {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #8a99cf;
+    filter: blur(3px);
+  }
+  
+  .noteWrapper:hover {
+    box-shadow: 0 0 15px #8a99cf;
+  }
+  
+  .titleWrapper {
+    background: #2f2f31;
+    border-radius: 10px 10px 0px 0px;
+    padding: 8px 16px;
+  }
+  .contentWrapper {
+    flex-grow: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+  }
+  .bottomWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .operationsWrapper {
+    display: flex;
+    height: 100%;
+    gap: 8px;
+    background: #2f2f31;
+    padding: 8px;
+    border-radius: 10px;
+  }
+  .operationsWrapper a,
+  .operationsWrapper form {
+    height: 18px;
+  }
+  .submitButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .bar {
+    height: 100%;
+    width: 1px;
+    background: #fff;
+  }
+  .tag {
+    background: #8a99cf;
+    padding: 6px 8px;
+    border-radius: 10px;
+  }
+  .shinyEffect {
+    transition: 0.5s;
+    transform: scale(0.9);
+  }
+  
+  .shinyEffect:hover {
+    transform: scale(1.2);
+  }
+  
+/* ----------- ANIMATIONS -------- */
+
+  .pictureOne {
+    position: absolute;
+    top: 10%;
+    right: 110%;
+  
+    animation: slideInOne 0.4s ease-in-out 0.4s forwards;
+  }
+  
+  .pictureTwo {
+    position: absolute;
+    bottom: 5%;
+    left: 110%;
+  
+    animation: slideInTwo 0.55s ease-in-out 0.55s forwards;
+  }
+  
+  .pictureThree {
+    position: absolute;
+    left: 145%;
+    bottom: 50%;
+    transform: rotate(-20deg);
+  
+    animation: slideInThree 0.6s ease-in-out 0.6s forwards;
+  }
+
+  @keyframes slideInOne {
+    0% {
+      right: 110%;
+    }
+    100% {
+      right: 10%;
+    }
+  }
+  
+  @keyframes slideInTwo {
+    0% {
+      left: 110%;
+    }
+    100% {
+      left: 10%;
+    }
+  }
+  
+  @keyframes slideInThree {
+    0% {
+      left: 145%;
+    }
+    100% {
+      left: 35%;
+    }
+  }

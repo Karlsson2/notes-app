@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styles from "@/app/page.module.css"
-import Image from "next/image";
 import { Kantumruy_Pro } from "next/font/google";
+import DummyNote from "./components/dummyNote/DummyNote";
 import { FetchApiNote } from "./config/data";
+
 
 const kantumruyPro = Kantumruy_Pro({
   weight: ['400', '700'],
@@ -33,9 +34,24 @@ export default async function Home() {
           <h1 className={styles.myNotes}>To My Notes</h1>
         </div>
       </Link>
-      <Image className={styles.pictureOne} src="/kurs.svg" alt="Kurs Image" width={300} height={300} />
-      <Image className={styles.pictureTwo} src="/mote.svg" alt="Mote Image" width={300} height={300} />
-      <Image className={styles.pictureThree} src="/handlingslista.svg" alt="Handlingslista Image" width={400} height={400} />
+      <DummyNote
+        title="Note 1"
+        content="Content 1"
+        tag="tag1"
+        class="pictureOne"
+      />
+      <DummyNote
+        title="Note 2"
+        content="Content 2"
+        tag="tag2"
+        class="pictureTwo"
+      />
+      <DummyNote
+        title="Note 3"
+        content="Content 3"
+        tag="tag3"
+        class="pictureThree"
+      />
       <h1 className={`${styles.slogun} ${kantumruyPro.className}`}>Never forget anything with NoteIT!</h1>
     </main>
   );

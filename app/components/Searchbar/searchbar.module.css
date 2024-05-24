@@ -1,58 +1,83 @@
-.searchbarContainer{
-    display: flex;
-    gap: 17px;
-    background-color: #1D1D1F;
-    justify-content: center;
-    align-items: center;
+.searchbarContainer {
+  display: flex;
+  gap: 17px;
+  background-color: #1d1d1f;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  padding: 0px 58px;
 }
 
-.inputContainer{
-    display: flex;
-    position: relative;
-    width: 60%;
+.inputContainer {
+  display: flex;
+  position: relative;
 }
 
-.searchIcon{
-    position: absolute;
-    top: 25%;
-    left: 2%;
+.searchIcon {
+  position: absolute;
+  top: 25%;
+  left: 2%;
 }
 
-.input{
-    height: 53px;
-    width: 100%;
-    border-radius: 25px;
-
-    color: #DADADA;
-    text-align:left;
-    padding-left: 50px;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.input {
+  height: 53px;
+  width: 100%;
+  border-radius: 25px;
+  color: #dadada;
+  text-align: left;
+  padding-left: 50px;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
-.addNew{
-    display: flex;
-    width: 130px;
-    height: 53px;
-    padding: 8px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    border-radius: 5px;
-    background: linear-gradient(270deg, #8A99CF 15%, #CE8ACF 74.5%);
-
-    color: #DEDEE0;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: normal;
-
+.addNew {
+  border: none;
+  position: absolute;
+  top: 28px;
+  display: flex;
+  width: 130px;
+  height: 53px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  background: linear-gradient(270deg, #8a99cf 15%, #ce8acf 74.5%);
+  align-self: flex-end;
+  color: #dedee0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
 }
 
-.filterButton{
-    background-color: #1D1D1F;
-    border-color: #1D1D1F;
-    border-width: 0px;
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 8px;
+}
+
+.filterButton {
+  background-color: #1d1d1f;
+  border-color: #1d1d1f;
+  border-width: 0px;
+}
+@media (min-width: 500px) {
+  .searchbarContainer {
+    flex-direction: row;
+  }
+  .addNew {
+    position: unset;
+  }
+  .searchContainer {
+    flex-grow: 1;
+  }
+  .inputContainer {
+    width: -webkit-fill-available;
+  }
 }

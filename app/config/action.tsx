@@ -14,8 +14,6 @@ const addNote = async (FormData: FormData) => {
   } catch (error) {
     throw new Error("Failed to create note" + error);
   }
-  revalidatePath("/");
-  redirect("/notes");
 };
 
 const updateNote = async (FormData: FormData) => {
@@ -40,6 +38,7 @@ const deleteNote = async (FormData: FormData) => {
   try {
     db();
     await Note.findByIdAndDelete(id);
+    console.log("reeeeee");
   } catch (error) {
     throw new Error("Failed to Delete" + error);
   }

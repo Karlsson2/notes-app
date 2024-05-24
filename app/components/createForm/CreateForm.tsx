@@ -3,12 +3,14 @@ import React from "react";
 import styles from "./createform.module.css";
 import { useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface CreateFormProps {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function CreateForm({ setShowForm }: CreateFormProps) {
+  const router = useRouter();
   function handleClose() {
     setShowForm(false);
   }
@@ -30,6 +32,7 @@ export default function CreateForm({ setShowForm }: CreateFormProps) {
     const { title, content, tag } = Object.fromEntries(formData);
     addNote(formData);
     handleClose();
+    router.refresh();
   };
 
   return (

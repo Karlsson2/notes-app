@@ -5,8 +5,6 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 /* import { Note } from "../components/Types/NoteTypes"; */
 /* import { redirect } from "next/navigation" */
-export const fetchCache = "force-no-store";
-
 const addNote = async (FormData: FormData) => {
   const { title, content, tag } = Object.fromEntries(FormData);
   try {

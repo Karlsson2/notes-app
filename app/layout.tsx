@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+export const fetchCache = "force-no-store";
 
 export const metadata: Metadata = {
   title: "Create Next App",

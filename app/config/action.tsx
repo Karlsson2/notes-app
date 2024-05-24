@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 /* import { Note } from "../components/Types/NoteTypes"; */
 /* import { redirect } from "next/navigation" */
+export const fetchCache = "force-no-store";
 
 const addNote = async (FormData: FormData) => {
   const { title, content, tag } = Object.fromEntries(FormData);
@@ -23,7 +24,7 @@ const updateNote = async (FormData: FormData) => {
   const { id, title, content, tag } = Object.fromEntries(FormData);
   try {
     db();
-    const updateFields: any= { title, content, tag };
+    const updateFields: any = { title, content, tag };
     Object.keys(updateFields).forEach(
       (key) =>
         (updateFields[key] === "" || undefined) && delete updateFields[key]

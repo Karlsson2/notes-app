@@ -22,6 +22,7 @@ export default async function Home() {
   const fetchedTodo= await FetchApiNote(todo);
    const fetchedJoke = await FetchApiNote(joke);
   const fetchedIngerdients = await FetchApiNote(ingerdients);
+  const ingredientList = fetchedIngerdients["meals"][0];
 
   console.log(fetchedTodo);
  console.log(fetchedJoke);
@@ -35,23 +36,25 @@ export default async function Home() {
         </div>
       </Link>
       <DummyNote
-        title="Note 1"
-        content="Content 1"
-        tag="tag1"
+        title="Today's Task"
+        content= {fetchedTodo.todo}
+        tag="task"
         class="pictureOne"
       />
       <DummyNote
-        title="Note 2"
-        content="Content 2"
-        tag="tag2"
+        title="Joke of the Day"
+        content={fetchedJoke.joke}
+        tag="funny"
         class="pictureTwo"
       />
       <DummyNote
-        title="Note 3"
-        content="Content 3"
-        tag="tag3"
+        title= {ingredientList["strMeal"]}
+        content={ [ingredientList["strIngredient1"], ingredientList["strIngredient2"], ingredientList["strIngredient3"], ingredientList["strIngredient4"] ] }
+        tag="meal"
         class="pictureThree"
       />
+
+
       <h1 className={`${styles.slogun} ${kantumruyPro.className}`}>Never forget anything with NoteIT!</h1>
     </main>
   );

@@ -7,6 +7,8 @@
   border-radius: 25px;
   width: 200px;
   margin-left: 63px;
+  position: fixed;
+  z-index: 99;
 }
 
 .buttonBackground:hover{
@@ -30,38 +32,12 @@
   height: 75vh;
 }
 
-.pictureOne {
-  position: absolute;
-  top: 5%;
-  right: 110%;
-
-  animation: slideInOne 0.4s ease-in-out 0.4s forwards;
-}
-
-.pictureTwo {
-  position: absolute;
-  bottom: 5%;
-  left: 110%;
-
-  animation: slideInTwo 0.55s ease-in-out 0.55s forwards;
-}
-
-.pictureThree {
-  position: absolute;
-  left: 145%;
-  bottom: 50%;
-  transform: rotate(-20deg);
-
-  animation: slideInThree 0.6s ease-in-out 0.6s forwards;
-}
-
 .slogun {
   position: absolute;
   left: 145%;
-  bottom: 30%;
+  bottom: 20%;
   font-size: 40px;
   font-weight: 600;
-  transform: translateX(-50%);
 
   background: linear-gradient( #8A99CF 10%, #CE8ACF 74.5%);
   -webkit-background-clip: text;
@@ -76,36 +52,12 @@
     left: 145%;
   }
   100% {
-    left: 60%;
+    left: 40%;
   }
 }
 
-@keyframes slideInOne {
-  0% {
-    right: 110%;
-  }
-  100% {
-    right: 10%;
+@media (max-width: 600px) {
+  .buttonBackground{
+    position: fixed;
   }
 }
-
-@keyframes slideInTwo {
-  0% {
-    left: 110%;
-  }
-  100% {
-    left: 10%;
-  }
-}
-
-@keyframes slideInThree {
-  0% {
-    left: 145%;
-  }
-  100% {
-    left: 35%;
-  }
-}
-
-
-

@@ -2,7 +2,7 @@
 import db from './database'
 import Note from '@/model/note'
 
-export const GetNotes = async () => {
+const GetNotes = async () => {
     try {
         await db();
         const notes = await Note.find({}).lean();
@@ -11,3 +11,15 @@ export const GetNotes = async () => {
         throw new Error("Failed to get notes: " + error);
     }
 }
+const FetchApiNote = async (endpoint: string) => {
+    try {
+        const response = await fetch(endpoint);
+        const data = await response.json();
+   /*      console.log(data); */
+        return data; 
+    } catch (error) {
+        throw new Error("Failed to fetch note: " + error);
+    }
+
+}
+export { GetNotes, FetchApiNote }

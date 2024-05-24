@@ -6,6 +6,7 @@ import styles from "./notes.module.css";
 
 export default async function Notes() {
   const notes: Note[] = await GetNotes();
+
   return (
     <>
       <Searchbar />

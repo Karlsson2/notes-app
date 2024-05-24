@@ -13,25 +13,34 @@ export default async function NotePage(params: Params) {
   const note = notes.find((note: Note) => note._id === slug);
 
   return (
-    <main>
-      <div>
-        <form action={updateNote}>
+    <div className={styles.formContainer}>
+      <div className={styles.updateFormWrapper}>
+        <div className={styles.formTitle}>Update Note</div>
+        <form action={updateNote} className={styles.updateForm}>
           <input name="id" type="hidden" value={note._id} />
-          <div>
-            <label htmlFor=""></label>
+          <div className={styles.updateFormInputDiv}>
+            <label htmlFor="title">Title</label>
             <input type="text" name="title" placeholder={note.title} />
           </div>
-          <div>
-            <label htmlFor=""></label>
-            <input type="text" name="content" placeholder={note.content} />
+          <div
+            className={`${styles.updateFormInputDiv} ${styles.updateFormTextareaDiv}`}
+          >
+            <label htmlFor="content">Content</label>
+            <textarea
+              name="content"
+              id="content"
+              placeholder={note.content}
+            ></textarea>
           </div>
-          <div>
-            <label htmlFor=""></label>
+          <div className={styles.updateFormInputDiv}>
+            <label htmlFor="tag">Tag</label>
             <input type="text" name="tag" placeholder={note.tag} />
           </div>
-          <button type="submit">Update Note</button>
+          <button type="submit" className={styles.updateButton}>
+            Update Note
+          </button>
         </form>
       </div>
-    </main>
+    </div>
   );
 }

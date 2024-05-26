@@ -55,7 +55,7 @@ export default async function Home() {
       />
 
 
-      <h1 className={`${styles.slogun} ${kantumruyPro.className}`}>Never forget anything with NoteIT!</h1>
+      <h1 className={`${styles.slogun} ${kantumruyPro.className}`}>Never forget anything with StickIT!</h1>
     </main>
   );
 }

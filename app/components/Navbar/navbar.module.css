@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  padding-left: 58px;
+  padding-left: 63px;
   margin-top: 5%;
 }
 
@@ -20,4 +20,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.navbarWrapper{
+  padding: 0 40px;
 }

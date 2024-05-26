@@ -9,7 +9,7 @@ const kantumruyPro = Kantumruy_Pro({
 
 export default function Navbar() {
   return (
-    <div>
+    <div className={styles.navbarWrapper}>
       <Link href="/">
         <h1 className={`${styles.title} ${kantumruyPro.className}`}>Stick<span className={styles.gradient}>IT</span></h1>
       </Link>

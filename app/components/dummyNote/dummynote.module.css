@@ -91,7 +91,7 @@
 
 .pictureTwo {
   position: absolute;
-  bottom: 5%;
+  bottom: 3%;
   left: 110%;
 
   animation: slideInTwo 0.55s ease-in-out 0.55s forwards;
@@ -131,4 +131,16 @@
   100% {
     left: 35%;
   }
+}
+
+@media (max-width: 500px) {
+    .pictureOne{
+        top: 20%;
+    }
+    .pictureTwo{
+        top: 39%;
+    }
+    .pictureThree{
+        bottom: 30%;
+    }
 }

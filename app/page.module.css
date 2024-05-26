@@ -56,8 +56,12 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .buttonBackground{
     position: fixed;
+  }
+  .slogun{
+    bottom:0%;
+    width: 100%;
   }
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "@/app/page.module.css"
 import { Kantumruy_Pro } from "next/font/google";
-import DummyNote from "./components/DummyNote/DummyNote";
+import DummyNote from "./components/DummyNote1/DummyNote";
 import { FetchApiNote } from "./config/data";
 import { IngredientType, JokeType, MealType, TodoType } from "./components/Types/ApiTypes";
 

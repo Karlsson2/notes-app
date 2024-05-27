@@ -2,7 +2,7 @@ import { GetNotes } from "@/app/config/data";
 import { updateNote } from "@/app/config/action";
 import { Note } from "@/app/components/Types/NoteTypes";
 import styles from "./note.module.css";
-import UpdateForm from "@/app/components/UpdateForm/UpdateForm";
+import UpdateForm from "@/app/components/UpdateForm/UpdateForm"
 type Params = {
   params: { id: String };
 };

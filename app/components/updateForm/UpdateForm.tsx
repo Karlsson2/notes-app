@@ -6,6 +6,7 @@ import { NoteProps } from "../Types/NoteTypes";
 import { useState } from "react";
 import { Note } from "../Types/NoteTypes";
 
+
 type FormElementEvent =
   | React.ChangeEvent<HTMLInputElement>
   | React.ChangeEvent<HTMLTextAreaElement>;

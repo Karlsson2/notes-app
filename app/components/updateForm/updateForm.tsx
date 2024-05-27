@@ -15,7 +15,7 @@ export default function UpdateForm(props: NoteProps) {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData: FormData = new FormData(event.currentTarget);
     updateNote(formData);
   };
 

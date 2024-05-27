@@ -1,5 +1,5 @@
 "use client";
-import CreateForm from "../createForm/CreateForm";
+import CreateForm from "../CreateForm/CreateForm";
 import styles from "./searchbar.module.css";
 import { useState } from "react";
 

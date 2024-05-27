@@ -15,8 +15,7 @@ const FetchApiNote = async (endpoint: string) => {
     try {
         const response = await fetch(endpoint);
         const data = await response.json();
-   /*      console.log(data); */
-        return data; 
+        return data;
     } catch (error) {
         throw new Error("Failed to fetch note: " + error);
     }

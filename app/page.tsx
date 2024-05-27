@@ -3,6 +3,7 @@ import styles from "@/app/page.module.css"
 import { Kantumruy_Pro } from "next/font/google";
 import DummyNote from "./components/dummyNote/DummyNote";
 import { FetchApiNote } from "./config/data";
+import { IngredientType, JokeType, MealType, TodoType } from "./components/Types/ApiTypes";
 
 
 const kantumruyPro = Kantumruy_Pro({
@@ -19,11 +20,12 @@ export default async function Home() {
   const ingerdients: string = "https://www.themealdb.com/api/json/v1/1/random.php";
   
   // the functions FetchApiNote to fetch the data 
-  const fetchedTodo= await FetchApiNote(todo);
-   const fetchedJoke = await FetchApiNote(joke);
-  const fetchedIngerdients = await FetchApiNote(ingerdients);
-  const ingredientList = fetchedIngerdients["meals"][0];
+  const fetchedTodo: TodoType= await FetchApiNote(todo) as TodoType;
+   const fetchedJoke: JokeType = await FetchApiNote(joke) as JokeType;
+  const fetchedIngerdients: MealType = await FetchApiNote(ingerdients) as MealType;
+  const ingredientList: IngredientType = fetchedIngerdients["meals"][0];
 
+  //console log the response data
   console.log(fetchedTodo);
  console.log(fetchedJoke);
   console.log(fetchedIngerdients);

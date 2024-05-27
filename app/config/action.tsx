@@ -29,10 +29,6 @@ const updateNote = async (FormData: FormData) => {
   try {
     db();
     const updateFields: any = { title, content, tag };
-    Object.keys(updateFields).forEach(
-      (key) =>
-        (updateFields[key] === "" || undefined) && delete updateFields[key]
-    );
     await Note.findByIdAndUpdate(id, updateFields);
   } catch (error) {
     throw new Error("Failed to update Note" + error);

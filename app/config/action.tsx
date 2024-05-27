@@ -16,7 +16,7 @@ const addNote = async (FormData: FormData) => {
     throw new Error("Failed to create note" + error);
   }
 
-  revalidatePath("/");
+  revalidatePath("/notes");
   redirect("/notes");
 };
 
@@ -25,7 +25,7 @@ const updateNote = async (FormData: FormData) => {
   id?.toString().trim().toString();
   title?.toString().trim().toString();
   content?.toString().trim().toString();
-  tag?.toString().trim().toString();  
+  tag?.toString().trim().toString();
   try {
     db();
     const updateFields: any = { title, content, tag };
@@ -37,7 +37,7 @@ const updateNote = async (FormData: FormData) => {
   } catch (error) {
     throw new Error("Failed to update Note" + error);
   }
-  revalidatePath("/");
+  revalidatePath("/notes");
   redirect("/notes");
 };
 
@@ -49,7 +49,7 @@ const deleteNote = async (FormData: FormData) => {
   } catch (error) {
     throw new Error("Failed to Delete" + error);
   }
-  revalidatePath("/");
+  revalidatePath("/notes");
 };
 
 export { addNote, updateNote, deleteNote };

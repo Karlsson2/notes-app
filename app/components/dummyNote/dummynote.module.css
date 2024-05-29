@@ -84,14 +84,14 @@
 .pictureOne {
   position: absolute;
   top: 10%;
-  right: 110%;
+  right: 125%;
 
   animation: slideInOne 0.4s ease-in-out 0.4s forwards;
 }
 
 .pictureTwo {
   position: absolute;
-  bottom: 3%;
+  bottom: 20%;
   left: 110%;
 
   animation: slideInTwo 0.55s ease-in-out 0.55s forwards;
@@ -108,10 +108,10 @@
 
 @keyframes slideInOne {
   0% {
-    right: 110%;
+    right: 120%;
   }
   100% {
-    right: 10%;
+    right: 2%;
   }
 }
 
@@ -135,12 +135,12 @@
 
 @media (max-width: 500px) {
     .pictureOne{
-        top: 20%;
+        top: 10%;
     }
     .pictureTwo{
-        top: 39%;
+        top: 46%;
     }
     .pictureThree{
-        bottom: 30%;
+        bottom: 23%;
     }
 }

@@ -25,3 +25,11 @@
 .navbarWrapper{
   padding: 0 40px;
 }
+
+@media (max-width: 500px) {
+  .title{
+    padding-left: 0px;
+    font-size: 37px;
+    margin-top: 10%;
+  }
+}

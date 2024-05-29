@@ -28,14 +28,17 @@
 }
 
 .main{
+  width: 100%;
   padding: 40px;
   height: 75vh;
+  position: relative;
+  padding-top: 0%;
 }
 
 .slogun {
   position: absolute;
   left: 145%;
-  bottom: 20%;
+  bottom: 10%;
   font-size: 40px;
   font-weight: 600;
 
@@ -52,7 +55,8 @@
     left: 145%;
   }
   100% {
-    left: 40%;
+    bottom: 0%;
+    left: 20%;
   }
 }
 
@@ -61,7 +65,8 @@
     position: fixed;
   }
   .slogun{
-    bottom:0%;
+    bottom:4%;
     width: 100%;
+    left: 145%;
   }
 }
